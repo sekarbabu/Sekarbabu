@@ -11,8 +11,11 @@ class Challenge1(unittest.TestCase):
         self.driver.close()
 
     def test_challenge1(self):
-        self.driver.get("https://www.google.com")
-        self.assertIn("Google", self.driver.title)
+        # self.driver.get("https://www.google.com")
+        # self.assertIn("Google", self.driver.title)
+        self.driver.get("https://www.copart.com")
+        self.assertIn("Auto Auction - Copart USA - Salvage Cars for Sale in Online Car Auctions", self.driver.title)
+
 
 
 if __name__ == '__main__':
