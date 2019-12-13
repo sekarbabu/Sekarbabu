@@ -15,6 +15,8 @@ class Challenge1(unittest.TestCase):
         # self.assertIn("Google", self.driver.title)
         self.driver.get("https://www.copart.com")
         self.assertIn("Auto Auction - Copart USA - Salvage Cars for Sale in Online Car Auctions", self.driver.title)
+        elements = self.driver.find_element()
+        print elements
 
 
 
