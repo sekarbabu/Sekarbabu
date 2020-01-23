@@ -18,11 +18,9 @@ def Fibonacci(n):
         return Fibonacci(n - 1) + Fibonacci(n - 2)
 
 
-
-
 def convertNumbertoString(num):
     below20 = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven',
-                'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+               'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
     tenthposition = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
     above100 = {100: 'Hundred', 1000: 'Thousand', 1000000: 'Million', 1000000000: 'Billion'}
 
@@ -30,8 +28,7 @@ def convertNumbertoString(num):
         return below20[num]
 
     if num < 100:
-        return tenthposition[(int)(num / 10) - 2] + ('' if num % 10 == 0 else ' ' + below20[num % 10])
-
+        return tenthposition[int(num / 10) - 2] + ('' if num % 10 == 0 else ' ' + below20[num % 10])
 
     position = max([key for key in above100.keys() if key <= num])
 
@@ -39,16 +36,10 @@ def convertNumbertoString(num):
         '' if num % position == 0 else ' ' + convertNumbertoString(num % position))
 
 
-
-
-
-
-
 class Challenge4(unittest.TestCase):
 
     def setUp(self):
         print ""
-
 
     def tearDown(self):
         print ""
@@ -63,8 +54,6 @@ class Challenge4(unittest.TestCase):
         print str(fib_num) + ' - ' + convertNumbertoString(fib_num)
         fib_num = (Fibonacci(21))
         print str(fib_num) + ' - ' + convertNumbertoString(fib_num)
-
-
 
 
 if __name__ == '__main__':
